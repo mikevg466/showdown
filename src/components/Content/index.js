@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Brackets from '../Brackets';
 import HotOrNot from '../HotOrNot';
 import Item from '../Item';
-import { AmericanChinese } from '../../images';
+import { cuisineArr } from '../../constants';
+import { generateImage } from '../../images/utils';
 
 const modes = {
   BRACKETS: 'BRACKETS',
@@ -15,11 +16,21 @@ class Content extends Component{
 
     this.state = {
       mode: '',
-      itemList: [
-        <Item image={<AmericanChinese />} name="American Chinese" />,
-      ],
+      itemList: [],
     };
     this.changeMode = this.changeMode.bind(this);
+  }
+
+  componentDidMount(){
+    const promiseArr = cuisineArr.map(cuisine => generateImage(cuisine.image));
+    Promise.all(promiseArr)
+      .then(ImgComponentArr =>
+        ImgComponentArr.map((ImgComponent, idx) => (
+          <Item image={<ImgComponent />} name={cuisineArr[idx].name} />
+        ))
+      )
+      .then(itemList => this.setState({ itemList }))
+      .catch(console.error.bind(console));
   }
 
   changeMode(mode){

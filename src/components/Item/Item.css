@@ -1,0 +1,12 @@
+
+.item__image{
+  display: flex;
+  justify-content: center;
+}
+
+.item__image img{
+  align-self: center;
+  max-width: 350px;
+  width: auto;
+  height: auto;
+}

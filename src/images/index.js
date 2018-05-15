@@ -1,1 +1,1 @@
-export { default as AmericanChinese } from './AmericanChinese';
+export { generateImage } from './utils';

@@ -1,32 +1,32 @@
 
 const cuisineArr = [
-  { name: 'Vietnamese', image: Vietnamese }
-  { name: 'Greek', image: Greek }
-  { name: 'Middle Eastern', image: MiddleEastern }
-  { name: 'Italian', image: Italian }
-  { name: 'Mexian', image: Mexian }
-  { name: 'American Chinese', image: AmericanChinese }
-  { name: 'Traditional Chinese', image: TraditionalChinese }
-  { name: 'Ramen', image: Ramen }
-  { name: 'Sushi', image: Sushi }
-  { name: 'Thai', image: Thai }
-  { name: 'Indian', image: Indian }
-  { name: 'Korean', image: Korean }
-  { name: 'Diner', image: Diner }
-  { name: 'Burgers', image: Burgers }
-  { name: 'Fast Food', image: FastFood }
-  { name: 'Grilled Cheese', image: GrilledCheese }
-  { name: 'Mac And Cheese', image: MacAndCheese }
-  { name: 'Cheese Platter', image: CheesePlatter }
-  { name: 'Breakfast', image: Breakfast }
-  { name: 'German', image: German }
-  { name: 'Burritos', image: Burritos }
-  { name: 'Pizza', image: Pizza }
-  { name: 'Home Cooked Diner', image: HomeCookedDiner }
-  { name: 'Seafood', image: Seafood }
-  { name: 'Hoagies', image: Hoagies }
-  { name: 'Easy Eating', image: EasyEating }
-  { name: 'Pancakes', image: Pancakes }
+  { name: 'American Chinese', image: 'AmericanChinese.jpg' },
+  { name: 'Breakfast', image: 'Breakfast.jpg' },
+  { name: 'Burgers', image: 'Burgers.jpg' },
+  { name: 'Burritos', image: 'Burritos.jpg' },
+  { name: 'Cheese Platter', image: 'CheesePlatter.jpg' },
+  { name: 'Diner', image: 'Diner.jpg' },
+  { name: 'Easy Eating', image: 'EasyEating.jpg' },
+  { name: 'Fast Food', image: 'FastFood.jpg' },
+  { name: 'German', image: 'German.jpg' },
+  { name: 'Greek', image: 'Greek.jpeg' },
+  { name: 'Grilled Cheese', image: 'GrilledCheese.jpg' },
+  { name: 'Hoagies', image: 'Hoagies.jpg' },
+  { name: 'Home Cooked Diner', image: 'HomeCookedDiner.jpg' },
+  { name: 'Indian', image: 'Indian.jpg' },
+  { name: 'Italian', image: 'Italian.jpg' },
+  { name: 'Korean', image: 'Korean.jpg' },
+  { name: 'Mac And Cheese', image: 'MacAndCheese.jpg' },
+  { name: 'Mexican', image: 'Mexican.jpg' },
+  { name: 'Middle Eastern', image: 'MiddleEastern.jpg' },
+  { name: 'Pancakes', image: 'Pancakes.jpg' },
+  { name: 'Pizza', image: 'Pizza.jpg' },
+  { name: 'Ramen', image: 'Ramen.jpg' },
+  { name: 'Seafood', image: 'Seafood.jpeg' },
+  { name: 'Sushi', image: 'Sushi.jpg' },
+  { name: 'Thai', image: 'Thai.jpg' },
+  { name: 'Traditional Chinese', image: 'TraditionalChinese.jpg' },
+  { name: 'Vietnamese', image: 'Vietnamese.jpg' },
 ];
 
 export default cuisineArr;
