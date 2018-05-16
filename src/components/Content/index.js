@@ -18,33 +18,41 @@ class Content extends Component{
       mode: '',
       itemList: [],
     };
-    this.changeMode = this.changeMode.bind(this);
   }
 
   componentDidMount(){
     const promiseArr = cuisineArr.map(cuisine => generateImage(cuisine.image));
     Promise.all(promiseArr)
       .then(ImgComponentArr =>
-        ImgComponentArr.map((ImgComponent, idx) => (
-          <Item image={<ImgComponent />} name={cuisineArr[idx].name} />
-        ))
+        ImgComponentArr.map((ImgComponent, idx) => ({
+          component: <Item image={<ImgComponent />} name={cuisineArr[idx].name} />,
+          name: cuisineArr[idx].name
+        
+        }))
       )
       .then(itemList => this.setState({ itemList }))
       .catch(console.error.bind(console));
   }
 
-  changeMode(mode){
+  changeMode = (mode) => {
     this.setState({ mode });
   }
 
+  removeItem = (itemIdx, callback) => {
+    const itemList = this.state.itemList.slice();
+    itemList.splice(itemIdx, 1);
+    this.setState({ itemList }, callback);
+  }
+
   render(){
+    console.log('ItemList ===> ', this.state.itemList);
     return (
       <div>
         <button onClick={() => this.changeMode(modes.BRACKETS)} >Brackets</button>
         <button onClick={() => this.changeMode(modes.HOTORNOT)} >HotOrNot</button>
         {
           this.state.mode === modes.BRACKETS
-            ? <Brackets items={this.state.itemList} />
+            ? <Brackets items={this.state.itemList} removeItem={this.removeItem} />
             : this.state.mode === modes.HOTORNOT
               ? <HotOrNot />
               : null
