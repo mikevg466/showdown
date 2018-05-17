@@ -1,0 +1,26 @@
+.brackets__content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.brackets__versus, .brackets__winners{
+  font-family: "Comic Sans";
+  color: #3d120d;
+}
+
+.brackets__winners{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brackets__winners__names{
+  background-color: #f9d483;
+  width: 50%;
+}
+
+.brackets__winners__icon{
+  width: 20%;
+}

@@ -2,8 +2,7 @@ import React from 'react';
 
 // Icon made by Freepik from www.flaticon.com
 
-const Orange
-= props => {
+const Orange = props => {
 	const fillColor = props.fillColor || '#f5a233';
 
 	return (

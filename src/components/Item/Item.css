@@ -1,4 +1,9 @@
 
+.item__name{
+  font-size: 22px;
+  font-weight: 600;
+}
+
 .item__image{
   display: flex;
   justify-content: center;
@@ -9,4 +14,5 @@
   max-width: 350px;
   width: auto;
   height: auto;
+  cursor: pointer;
 }

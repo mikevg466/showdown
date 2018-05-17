@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Boxing, Winner } from '../Icons';
+import './Brackets.css';
 
 class Brackets extends Component{
   constructor(){
@@ -7,7 +9,7 @@ class Brackets extends Component{
     this.state = {
       firstItemIndex: 0,
       secondItemIndex: 1,
-      maxBracketCount: 1,
+      maxBracketCount: 5,
     };
   }
 
@@ -47,25 +49,35 @@ class Brackets extends Component{
 
 
     return (
-      <div>
+      <div className="brackets">
         <p>BRACKETS!</p>
         <button onClick={this.setRandomIdx} >RANDOM!</button>
         {
           (items.length && items.length > maxBracketCount)
             ? (
-                <div>
-                  <div onClick={() => this.handleClick(secondItemIndex)}>
+                <div className="brackets__content">
+                  <div className="brackets__content__first-item" onClick={() => this.handleClick(secondItemIndex)}>
                     {this.props.items[firstItemIndex] && this.props.items[firstItemIndex].component}
                   </div>
-                  <div onClick={() => this.handleClick(firstItemIndex)}>
+                  <div className="brackets__versus">
+                    <h1>Versus!</h1>
+                    <Boxing />
+                  </div>
+                  <div className="brackets__content__second-item" onClick={() => this.handleClick(firstItemIndex)}>
                     {this.props.items[secondItemIndex] && this.props.items[secondItemIndex].component}
                   </div>
                 </div>
               )
             : (
-                <ul>
-                  {items.map(item => (<li>{item.name}</li>))}
-                </ul>
+                <div className="brackets__winners">
+                  <h1>Winners!</h1>
+                  <div className="brackets__winners__icon">
+                    <Winner />
+                  </div>
+                  <div className="brackets__winners__names">
+                    {items.map(item => (<p>{`- ${item.name}`}</p>))}
+                  </div>
+                </div>
             )
         }
       </div>
