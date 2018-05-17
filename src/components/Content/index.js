@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import Links from '../Links';
 import Brackets from '../Brackets';
 import HotOrNot from '../HotOrNot';
 import Item from '../Item';
 import { cuisineArr } from '../../constants';
 import { generateImage } from '../../images/utils';
 
-const modes = {
-  BRACKETS: 'BRACKETS',
-  HOTORNOT: 'HOTORNOT',
-};
-
 class Content extends Component{
   constructor(){
     super();
 
     this.state = {
-      mode: '',
       itemList: [],
     };
   }
@@ -27,15 +23,11 @@ class Content extends Component{
         ImgComponentArr.map((ImgComponent, idx) => ({
           component: <Item image={<ImgComponent />} name={cuisineArr[idx].name} />,
           name: cuisineArr[idx].name
-        
+
         }))
       )
       .then(itemList => this.setState({ itemList }))
       .catch(console.error.bind(console));
-  }
-
-  changeMode = (mode) => {
-    this.setState({ mode });
   }
 
   removeItem = (itemIdx, callback) => {
@@ -44,19 +36,16 @@ class Content extends Component{
     this.setState({ itemList }, callback);
   }
 
+  BracketsRoute = () => <Brackets items={this.state.itemList} removeItem={this.removeItem} />
+  HotOrNotRoute = () => <HotOrNot />
+
   render(){
     console.log('ItemList ===> ', this.state.itemList);
     return (
       <div>
-        <button onClick={() => this.changeMode(modes.BRACKETS)} >Brackets</button>
-        <button onClick={() => this.changeMode(modes.HOTORNOT)} >HotOrNot</button>
-        {
-          this.state.mode === modes.BRACKETS
-            ? <Brackets items={this.state.itemList} removeItem={this.removeItem} />
-            : this.state.mode === modes.HOTORNOT
-              ? <HotOrNot />
-              : null
-        }
+        <Route exact path="/" component={Links} />
+        <Route path="/brackets" component={this.BracketsRoute} />
+        <Route path="/hotornot" component={this.HotOrNotRoute} />
       </div>
     );
   }

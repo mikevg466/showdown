@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Apple, Orange, Robot } from '../Icons';
 import Content from '../Content';
 import './App.css';
@@ -19,7 +20,9 @@ class App extends Component {
               <Orange />
             </div>
           </div>
-          <h1 className="App-title">Showdown!</h1>
+          <Link to="/">
+            <h1 className="App-title">Showdown!</h1>
+          </Link>
         </header>
         <Content />
       </div>

@@ -9,7 +9,7 @@ class Brackets extends Component{
     this.state = {
       firstItemIndex: 0,
       secondItemIndex: 1,
-      maxBracketCount: 5,
+      maxBracketCount: 3,
     };
   }
 
@@ -44,14 +44,8 @@ class Brackets extends Component{
       maxBracketCount,
     } = this.state;
 
-    console.log('First Item Idx ===> ', firstItemIndex);
-    console.log('Second Item Idx ===> ', secondItemIndex);
-
-
     return (
       <div className="brackets">
-        <p>BRACKETS!</p>
-        <button onClick={this.setRandomIdx} >RANDOM!</button>
         {
           (items.length && items.length > maxBracketCount)
             ? (

@@ -13,6 +13,9 @@
   padding: 20px;
   color: white;
 }
+.App-header a{
+  text-decoration: none;
+}
 
 .logo-container {
   display: flex;
@@ -23,6 +26,8 @@
 
 .App-title {
   font-size: 1.5em;
+  text-decoration: none;
+  color: white;
 }
 
 .App-intro {
