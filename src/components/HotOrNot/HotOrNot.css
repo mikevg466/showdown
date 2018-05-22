@@ -1,0 +1,25 @@
+.hot-or-not__content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.hot-or-not__item{
+  flex: 10 3 auto;
+}
+.hot-or-not__divider{
+  min-height: 1px;
+  flex: 1 2 auto;
+}
+.hot-or-not__click-types{
+  flex: 2 1 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 20vh;
+}
+
+.click-type__like,
+.click-type__dislike{
+  cursor: pointer;
+}

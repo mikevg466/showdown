@@ -5,22 +5,7 @@
   align-items: center;
 }
 
-.brackets__versus, .brackets__winners{
+.brackets__versus{
   font-family: "Comic Sans";
   color: #3d120d;
-}
-
-.brackets__winners{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.brackets__winners__names{
-  background-color: #f9d483;
-  width: 50%;
-}
-
-.brackets__winners__icon{
-  width: 20%;
 }

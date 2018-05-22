@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import { Boxing, Winner } from '../Icons';
+import WinnerList from '../WinnerList';
+import { Boxing } from '../Icons';
 import { shuffle } from '../../utils';
 import './Brackets.css';
+
+const bracketType = {
+  FIRST: 'FIRST',
+  SECOND: 'SECOND',
+}
 
 class Brackets extends Component{
   constructor(){
@@ -27,7 +33,7 @@ class Brackets extends Component{
 
     // push the item to save to the result Array and
     //   remove both items from the bracket Array
-    if(itemStr === 'first'){
+    if(itemStr === bracketType.FIRST){
       resultArr.push(bracketArr.pop());
       bracketArr.pop();
     } else{
@@ -68,29 +74,21 @@ class Brackets extends Component{
           this.state.bracketArr.length >= 2
             ?
               <div className="brackets__content">
-                <div className="brackets__content__first-item" onClick={() => this.handleClick('first')}>
+                <div className="brackets__content__first-item" onClick={() => this.handleClick(bracketType.FIRST)}>
                   {this.state.bracketArr[firstItemIndex] && this.state.bracketArr[firstItemIndex].component}
                 </div>
                 <div className="brackets__versus">
                   <h1>Versus!</h1>
                   <Boxing />
                 </div>
-                <div className="brackets__content__second-item" onClick={() => this.handleClick('second')}>
+                <div className="brackets__content__second-item" onClick={() => this.handleClick(bracketType.SECOND)}>
                   {this.state.bracketArr[secondItemIndex] && this.state.bracketArr[secondItemIndex].component}
                 </div>
               </div>
             :
               this.state.resultArr.length
                 ?
-                  <div className="brackets__winners">
-                    <h1>Winners!</h1>
-                    <div className="brackets__winners__icon">
-                      <Winner />
-                    </div>
-                    <div className="brackets__winners__names">
-                      {this.state.resultArr.map(item => (<p key={item.name}>{`- ${item.name}`}</p>))}
-                    </div>
-                  </div>
+                  <WinnerList items={this.state.resultArr} />
                 :
                   null
         }

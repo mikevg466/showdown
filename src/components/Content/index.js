@@ -37,7 +37,7 @@ class Content extends Component{
   }
 
   BracketsRoute = () => <Brackets items={this.state.itemList} removeItem={this.removeItem} />
-  HotOrNotRoute = () => <HotOrNot />
+  HotOrNotRoute = () => <HotOrNot items={this.state.itemList} />
 
   render(){
     console.log('ItemList ===> ', this.state.itemList);

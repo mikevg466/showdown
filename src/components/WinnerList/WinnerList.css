@@ -1,0 +1,19 @@
+.winner-list{
+  font-family: "Comic Sans";
+  color: #3d120d;
+}
+
+.winner-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.winner-list__names{
+  background-color: #f9d483;
+  width: 50%;
+}
+
+.winner-list__icon{
+  width: 20%;
+}
