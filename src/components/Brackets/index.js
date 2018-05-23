@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import WinnerList from '../WinnerList';
-import { Boxing } from '../Icons';
+import { Boxing, Confused } from '../Icons';
 import { shuffle } from '../../utils';
 import './Brackets.css';
 
 const bracketType = {
   FIRST: 'FIRST',
   SECOND: 'SECOND',
+  DRAW: 'DRAW',
 }
 
 class Brackets extends Component{
@@ -36,8 +37,11 @@ class Brackets extends Component{
     if(itemStr === bracketType.FIRST){
       resultArr.push(bracketArr.pop());
       bracketArr.pop();
-    } else{
+    } else if(itemStr === bracketType.SECOND){
       bracketArr.pop();
+      resultArr.push(bracketArr.pop());
+    } else{
+      resultArr.push(bracketArr.pop());
       resultArr.push(bracketArr.pop());
     }
 
@@ -78,8 +82,14 @@ class Brackets extends Component{
                   {this.state.bracketArr[firstItemIndex] && this.state.bracketArr[firstItemIndex].component}
                 </div>
                 <div className="brackets__versus">
-                  <h1>Versus!</h1>
-                  <Boxing />
+                  <div className="versus__logo">
+                    <h1>Versus!</h1>
+                    <Boxing />
+                  </div>
+                  <div className="versus__draw" onClick={() => this.handleClick(bracketType.DRAW)}>
+                    <Confused />
+                    <h2>Draw!</h2>
+                  </div>
                 </div>
                 <div className="brackets__content__second-item" onClick={() => this.handleClick(bracketType.SECOND)}>
                   {this.state.bracketArr[secondItemIndex] && this.state.bracketArr[secondItemIndex].component}

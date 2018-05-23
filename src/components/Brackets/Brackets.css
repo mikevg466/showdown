@@ -8,4 +8,20 @@
 .brackets__versus{
   font-family: "Comic Sans";
   color: #3d120d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.versus__logo{
+  max-width: 250px;
+}
+.versus__draw{
+  margin-top: 20px;
+  max-width: 100px;
+  cursor: pointer;
+}
+.versus__draw h2{
+  margin: 0;
 }

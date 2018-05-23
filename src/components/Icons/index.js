@@ -1,6 +1,7 @@
 export { default as Apple } from './Apple';
 export { default as Boxing } from './Boxing';
 export { default as Brackets } from './Brackets';
+export { default as Confused } from './Confused';
 export { default as Dislike } from './Dislike';
 export { default as Fire } from './Fire';
 export { default as Like } from './Like';
